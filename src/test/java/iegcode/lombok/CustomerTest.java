@@ -23,4 +23,13 @@ public class CustomerTest {
         Assertions.assertEquals("NAME", customer.getName());
 
     }
+
+    @Test
+    void testEquals() {
+        var customer1 = new Customer("ID", "NAME");
+        var customer2 = new Customer("ID", "NAME");
+
+        Assertions.assertEquals(customer1, customer2);
+        Assertions.assertEquals(customer1.hashCode(), customer2.hashCode());
+    }
 }
